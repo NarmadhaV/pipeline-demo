@@ -1,21 +1,25 @@
-pipeline{
-	agent any
-	stages{
-		stage ('One'){
-			steps{
-				echo 'This is the first Stage'
-			}
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building.. This is the build phase'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing.. This is the testing phase'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....  This is the deployment phase'
+            }
+        }
+	stage('Postdeploy') {
+		steps {
+			echo 'Postdeployment phase....'
 		}
-		stage ('Two'){
-			steps{
-				echo 'This is the Second Stage'
-			}
-		}
-		stage ('Three){
-			steps{
-				echo 'This is the Third Stage'
-			}
-		}
-	
 	}
-}
+    
